@@ -27,6 +27,22 @@ $(call inherit-product, device/lge/judypn/device.mk)
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
+# RisingOS-Revived
+RISING_MAINTAINER="gr3goorr"
+RISING_MAINTAINER := gr3goorr
+
+# RisingOS-Revived
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RisingChipset="Snapdragon 845" \
+    RisingMaintainer="gr3goorr"
+
+# Extras
+TARGET_BOOT_ANIMATION_RES := 1440
+TARGET_ENABLE_BLUR := true
+TARGET_HAS_UDFPS := false
+
+PRODUCT_NO_CAMERA := false
+
 # Overlays (inherit after vendor/cm to ensure we override it)
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -45,4 +61,3 @@ TARGET_VENDOR_DEVICE_NAME := judypn
 PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceName=judypn \
     BuildDesc="judypn_lao_com-user 10 QKQ1.191222.002 2225217090e9f release-keys" \
-    BuildFingerprint=lge/judypn_lao_com/judypn:10/QKQ1.191222.002/2225217090e9f:user/release-keys
